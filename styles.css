@@ -8,6 +8,8 @@ body {
   font-size: 3rem;
   margin:  5%;
   color: #FEF2BF;
+  background-color: #011F3F;
+  border: none;
 }
 
 .container {
