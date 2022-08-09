@@ -3,7 +3,7 @@ var gamePattern = [];
 var userClickedPattern = [];
 var started = false;
 var level = 0;
-var baka =1;
+var baka = 1;
 
 function nextSequense() {
     userClickedPattern = [];
@@ -27,6 +27,10 @@ function handler() {
 
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3")
+    audio.play();
+};
+function playSound(name2) {
+    var audio2 = new Audio("sounds/" + name2 + ".ogg")
     audio.play();
 };
 
@@ -61,17 +65,20 @@ function checkAnswer(currentLevel) {
             var audio2 = new Audio("sounds/1.ogg");
             audio2.play();
             baka++;
-        }
-        else if (baka ===2) {
+        } else if (baka === 2) {
             var audio2 = new Audio("sounds/audio_169@26-04-2022_18-42-15.ogg");
             audio2.play();
             baka++;
-        }
-        else if (baka ===3) {
+        } else if (baka === 3) {
             var audio2 = new Audio("sounds/audio_201@27-05-2022_01-38-17.ogg");
             audio2.play();
-            baka=1;
+            baka = 1;
         }
+        $("body").addClass("game-over");
+        setTimeout(() => {
+            $("body").removeClass("game-over");
+        }, 200);
+       $("#level-title").text("Game Over, Press Any Key to Restart");
     }
 
 }
