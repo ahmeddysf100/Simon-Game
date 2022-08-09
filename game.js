@@ -15,6 +15,7 @@ function nextSequense() {
     $("#" + randomChosenColor).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
 };
+
 $(".btn").click(handler);
 
 function handler() {
@@ -24,6 +25,11 @@ function handler() {
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length - 1);
 };
+
+$("h1").click(function () {
+    nextSequense();
+    started = true;
+});
 
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3")
