@@ -29,9 +29,10 @@ function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3")
     audio.play();
 };
-function playSound(name2) {
+
+function playSound2(name2) {
     var audio2 = new Audio("sounds/" + name2 + ".ogg")
-    audio.play();
+    audio2.play();
 };
 
 function animatePress(currentColor) {
@@ -62,23 +63,27 @@ function checkAnswer(currentLevel) {
 
     } else {
         if (baka === 1) {
-            var audio2 = new Audio("sounds/1.ogg");
-            audio2.play();
+            playSound2(baka);
             baka++;
         } else if (baka === 2) {
-            var audio2 = new Audio("sounds/audio_169@26-04-2022_18-42-15.ogg");
-            audio2.play();
+            playSound2(baka);
             baka++;
         } else if (baka === 3) {
-            var audio2 = new Audio("sounds/audio_201@27-05-2022_01-38-17.ogg");
-            audio2.play();
+            playSound2(baka);
             baka = 1;
         }
         $("body").addClass("game-over");
         setTimeout(() => {
             $("body").removeClass("game-over");
         }, 200);
-       $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over, Press Any Key to Restart");
+        startOver();
     }
 
+}
+
+function startOver() {
+    level = 0;
+    gamePattern = [];
+    started = false;
 }
