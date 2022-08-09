@@ -26,9 +26,11 @@ function handler() {
     checkAnswer(userClickedPattern.length - 1);
 };
 
-$("h1").click(function () {
+$("button").click(function () {
     nextSequense();
     started = true;
+    level = 0;
+    
 });
 
 function playSound(name) {
@@ -84,6 +86,7 @@ function checkAnswer(currentLevel) {
         }, 200);
         $("#level-title").text("Game Over, Press Any Key to Restart");
         startOver();
+
     }
 
 }
